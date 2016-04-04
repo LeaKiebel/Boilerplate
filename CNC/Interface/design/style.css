@@ -1,0 +1,26 @@
+body { font-family: arial;
+		 
+
+		}
+#menue { background-color: gray;
+			width: 10%;
+			height: 100%;
+			color: black;
+			position: fixed;
+			left: 1px;
+			
+}
+
+#sttabelle { position: absolute;
+				right: 1px;
+				width: 90%;
+				
+				
+				
+				
+					}
+a:hover{	color: black;			
+				
+}
+a:active{ color: white;
+}
