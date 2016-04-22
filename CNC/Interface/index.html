@@ -1,47 +1,48 @@
-<!DOCTYPE html> <!-- Kommentare dienen zu einem besseren Verständniss, leere Zeilen dienen zur Übersichtlichkeit -->
+<!DOCTYPE html>
 <html>
-<head>
-	<title>CNC Interface</title>
-	<link rel="stylesheet" href="./design/index.css">
-	<link rel="stylesheet" media="print" href="./design/print.css">
-</head>
-<body>
+	<head lang="de">
+		<meta charset="utf-8">
+		<title> CNC Interface </title>
+		<link rel="stylesheet" type="text/css" href="./design/index.css">
+		<link rel="stylesheet" type="text/css" media="print" href="./design/print.css">
+		<script type="text/javascript" src="./script/getServer.js" ></script>
+	</head>
+	<body>
+		<div id="kopf">
+		<header class="top"> CNC Interface </header>
+			<aside class="top">
+				<menu>
+					<li> <a href="#status"> Status </a> </li>
+					<li> <a href="#tasks"> Tasks </a> </li>
+				</menu>
+			</aside>
+		</div>
+		<main>
+			<section id="status">
+				<table id="status-overview">
+					<thead>
+						<tr>
+							<th>Workload</th>
+							<th>IP</th>
+							<th>Task</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="4">No BOTS active yet :(</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>	
+		<section id="tasks"></section>
+	</body>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(event) {
+		initialize();
+		});
+	
+	jjj</script>
 
-	<header>
-		<h1>CNC Interface</h1>
-	</header>
-
-	<aside><!-- Unterteilt Abschnitte einer Seite, welche nur indirekt etwas mit ihr zu tun haben -->
-		<menu>
-			<li><a href="#status">Status</a></li>
-			<li><a href="#tasks">Tasks</a></li>
-		</menu>
-	</aside>
-
-	<main><!-- enthält den Hauptinhalt einer Webseite -->
-
-		<section id="status"> <!-- Teilt in semantisch zusammenhängende Gruppe auf -->
-
-			<table id="status-overview"> <!-- thead, tbody, tfoot sind für die strukturierung der TABELLE, während tr,th,td innerhalb der tabelle gilt-->
-				<thead>
-					<tr>
-						<th>Workload</th>
-						<th>IP</th>
-						<th>Task</th>
-						<th>Status</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="4">No BOTS active yet :(</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
-		<section id="tasks">
-			TODO: Task Section
-		</section>
-	</main>
-
-</body>
 </html>

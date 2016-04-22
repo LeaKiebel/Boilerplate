@@ -1,0 +1,16 @@
+var xhr= XMLHttpRequest();
+xhr.responseType("json"); //legt Type der Response dokumente fest
+xhr.open("GET","http://botnet.artificial.engineering/api/status",true); // asynchronous http-method invokation 
+xhr.onload = function (e) {
+	if(xhr.readyState === 4) { // ready state gibt den Status des Request Vorgangs an
+		if(xhr.status === 200) { // returns a status of the response of request
+			console.log(xhr.responseText);
+		} else {
+			console.error(xhr.statusText);
+		}
+	}
+};
+xhr.oneerror = function(e) {
+	console.error(xhr.statusText);
+};
+xht.send(null);
