@@ -31,7 +31,7 @@ var initialize = function() {
 			content.innerHTML = code;
 
 		} else {
-
+yScript
 			content.innerHTML = 'Failed to load :(';
 
 		}
