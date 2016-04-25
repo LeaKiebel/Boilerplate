@@ -63,9 +63,9 @@ main {
 	margin:inherit;
 	border: 1px solid black;
 }
-main > table{
-	position: relative;
-	overflow-x: hidden;
+main > table {
+	position: absolute;
+	visibility: hidden;
 	margin-top: 200px;
 }
 #status {
