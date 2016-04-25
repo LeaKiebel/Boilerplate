@@ -65,7 +65,7 @@ main {
 }
 main > table{
 	position: relative;
-	overflow-x: hidden;
+	overflow: hidden;
 	margin-top: 200px;
 }
 #status {
