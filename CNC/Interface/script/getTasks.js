@@ -1,10 +1,10 @@
 var initialize = function() {
 
 	var xhr    = new XMLHttpRequest();
-	var content = document.querySelector('#status-overview tbody',);
+	var content = document.querySelector('#tasks tbody');
 
 
-	xhr.open('GET', 'http://botnet.artificial.engineering:8080/api/Status');
+	xhr.open('GET', 'http://botnet.artificial.engineering:8080/api/tasks');
 	xhr.responseType = 'json';
 
 	xhr.onload = function() {
@@ -20,10 +20,9 @@ var initialize = function() {
 
 				code += '<tr>';
 				code += '<td>' + entry.id + '</td>';
-				code += '<td>' + entry.ip + '</td>';
-				code += '<td>' + entry.task + '</td>';
-				code += '<td>' + entry.workload + '</td>';
-				code += '<td><button class="button" id="button_id' + entry.id +'" onclick="toggleButton(this.id);">Start</button></td>';
+				code += '<td>' + entry.type + '</td>';
+				code += '<td>' + entry.input + '</td>';
+				code += '<td>' + entry.output + '</td>';
 				code += '</tr>';
 
 			}
