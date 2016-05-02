@@ -27,8 +27,8 @@ menu {
 	width: inherit;
 	position: fixed;
 	left: inherit;
-	
 }
+
 menu > li {
 	position: relative;
 	height: 50%;
@@ -59,21 +59,20 @@ main {
 	margin:inherit;
 	border: 1px solid black;
 }
-#status{
+#status-overview{
 	visibility: hidden;	
 	position: absolute;
-	margin-top: 200px;
+	margin-top: 300px;
 }
-#status:target {
+#status-overview:target {
 	visibility: visible;
-	position:absolute;
-	margin-top:0px;
-	transition: margin 1000ms ease-out 1s; 
+	margin-top: 0px;
+	transition: margin 500ms ease-out ; 
 }
 table, td, th {
 	border: 2px solid black;
 }
-#kopf {
-	background: none white;
-	
+tr:hover {
+	color: white;
+	background-color: black;
 }

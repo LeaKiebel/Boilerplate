@@ -5,13 +5,13 @@
 		<title> CNC Interface </title>
 		<link rel="stylesheet" type="text/css" href="./design/index.css">
 		<link rel="stylesheet" type="text/css" media="print" href="./design/print.css">
-		<script type="text/javascript" src="./script/getServer.js" ></script>
+		<script type="text/javascript" src="./script/getStatus.js" ></script>
 	</head>
 	<body>
-		<header> CNC Interface </header>
+		<header>CNC Interface </header>
 			<aside>
 				<menu>
-					<li> <a href="#status"> Status </a> </li>
+					<li> <a href="#status-overview"> Status </a> </li>
 					<li> <a href="#tasks"> Tasks </a> </li>
 				</menu>
 			</aside>
@@ -24,21 +24,33 @@
 							<th>IP</th>
 							<th>Task</th>
 							<th>Status</th>
-							<th>Start/Stop<th>
+							<th>Action<th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 				</table>
 			</section>
-		</main>	
-		<section id="tasks"></section>
+		</main>
+		<section id="tasks">
+			<table>
+				<thead>
+					<th> ID </th>
+					<th> Type <th>
+					<th> Input <th>
+					<th> Output <th>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+		</section>
 	</body>
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
 		initialize();
 		});
-	
+
 	</script>
 
 </html>
