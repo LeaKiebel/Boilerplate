@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="./design/index.css">
 		<link rel="stylesheet" type="text/css" media="print" href="./design/print.css">
 		<script type="text/javascript" src="./script/getStatus.js" ></script>
+		<script type="text/javascript" src="./script/getTasks.js" ></script>
 	</head>
 	<body>
 		<header>CNC Interface </header>
@@ -46,7 +47,8 @@
 	</body>
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
-		initialize();
+			initStatus();
+			initTask();
 		});
 
 	</script>

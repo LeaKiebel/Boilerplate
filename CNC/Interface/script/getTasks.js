@@ -1,4 +1,4 @@
-var initialize = function() {
+var initTask = function() {
 
 	var xhr    = new XMLHttpRequest();
 	var content = document.querySelector('#tasks tbody');
@@ -21,8 +21,8 @@ var initialize = function() {
 				code += '<tr>';
 				code += '<td>' + entry.id + '</td>';
 				code += '<td>' + entry.type + '</td>';
-				code += '<td>' + entry.input + '</td>';
-				code += '<td>' + entry.output + '</td>';
+				code += '<td>' + entry.data.input + '</td>';
+				code += '<td>' + entry.data.output + '</td>';
 				code += '</tr>';
 
 			}
