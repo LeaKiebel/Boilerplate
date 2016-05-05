@@ -1,7 +1,7 @@
 var initTask = function() {
 
 	var xhr    = new XMLHttpRequest();
-	var content = document.querySelector('#tasks tbody');
+	var content = document.querySelector('#tasks>tbody');
 
 
 	xhr.open('GET', 'http://botnet.artificial.engineering:8080/api/tasks');

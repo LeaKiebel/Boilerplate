@@ -21,11 +21,11 @@
 				<table id="status-overview">
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>IP</th>
-							<th>Task</th>
-							<th>Workload</th>
-							<th>Action<th>
+							<th> ID </th>
+							<th> IP </th>
+							<th> Task </th>
+							<th> Workload </th>
+							<th> Action </th>
 						</tr>
 					</thead>
 					<tbody>
@@ -34,13 +34,25 @@
 				<table id="tasks">
 					<thead>
 						<th> ID </th>
-						<th> Type <th>
-						<th> Input <th>
-						<th> Output <th>
+						<th> Type </th>
+						<th> Input </th>
+						<th> Output </th>
+						<th> <button type="button" name="button" onclick="initTask()"> Refresh </button> </th>
 					</thead>
 					<tbody>
 
 					</tbody>
+					<tfoot>
+						<th>						</th>
+						<th><select name="Type">
+								<option value="value1"> hash-md5 </option>
+  							<option value="value2"> hash-sha256 </option>
+								<option value="value3"> crack-md5 </option>
+								</select>
+						</th>
+						<th>						</th>
+						<th>						</th>
+					</tfoot>
 				</table>
 			</section>
 		</main>

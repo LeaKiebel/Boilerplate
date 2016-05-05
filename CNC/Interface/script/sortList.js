@@ -1,4 +1,4 @@
-
+  
 $(function sortList(id){
   $(id).data("sorter", false);
 
