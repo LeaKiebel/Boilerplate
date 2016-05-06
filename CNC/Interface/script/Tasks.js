@@ -39,15 +39,15 @@ var initTask = function() {
 	xhr.send(null);
 
 };
-
 var processTaskForm = function(){
 
 	var xhr    = new XMLHttpRequest();
-	var select = document.querySelector('#taskForm > select');
-	var input = document.querySelector('#taskForm > input');
+	var select = document.getElementById('selectTasks');
+	var input = document.getElementById('inputTasks');
+  var value = select.options[select.selectedIndex].value;
 
 	var data = {
-			type = select.options[select.selectedIndex].value ,
+			type : select.value,
 
 			data : {
 				input: input.value

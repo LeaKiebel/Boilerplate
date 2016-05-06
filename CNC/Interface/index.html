@@ -5,8 +5,9 @@
 		<title> CNC Interface </title>
 		<link rel="stylesheet" type="text/css" href="./design/index.css">
 		<link rel="stylesheet" type="text/css" media="print" href="./design/print.css">
-		<script type="text/javascript" src="./script/Status.js" ></script>
-		<script type="text/javascript" src="./script/Tasks.js" ></script>
+		<script type="text/javascript" src="./script/Tasks.js"></script>
+		<script type="text/javascript" src="./script/Status.js"></script>
+		<script type="text/javascript" src="./script/PostTaskForm.js"></script>
 	</head>
 	<body>
 		<header>CNC Interface </header>
@@ -42,17 +43,19 @@
 					<tbody>
 
 					</tbody>
-					<tfoot id="taskForm">
+					<tfoot >
 						<th>						</th>
 						<th>
-							<select name="Type">
-								<option value="value1"> hash-md5 </option>
-  							<option value="value2"> hash-sha256 </option>
-								<option value="value3"> crack-md5 </option>
+							<select name="select" id="selectTasks">
+								<option value="hash-md5"> hash-md5 </option>
+  							<option value="hash-sha256" > hash-sha256 </option>
+								<option value="crack-md5"> crack-md5 </option>
 							</select>
 						</th>
-						<th><input type="text" name="name" value="Here Input"></th>
+						<th><input id="inputTasks" type="text" name="name" value="Testo"></th>
 						<th><button type="button" name="submitButton" onclick="processTaskForm();">Submit!</button></th>
+						<th>	<button type="button" name="button" onclick="initTask()"> Refresh </button> 	</th>
+
 					</tfoot>
 				</table>
 			</section>

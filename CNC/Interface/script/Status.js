@@ -42,6 +42,7 @@ var initStatus = function() {
 
 	xhr.send(null);
 };
+
 var toggleButton = function(button_id) {
 
 	var button = document.getElementById(button_id);
