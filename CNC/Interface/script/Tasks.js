@@ -39,3 +39,26 @@ var initTask = function() {
 	xhr.send(null);
 
 };
+
+var processTaskForm = function(){
+
+	var xhr    = new XMLHttpRequest();
+	var select = document.querySelector('#taskForm > select');
+	var input = document.querySelector('#taskForm > input');
+
+	var data = {
+			type = select.options[select.selectedIndex].value ,
+
+			data : {
+				input: input.value
+			}
+	};
+
+	xhr.open('POST', 'http://botnet.artificial.engineering:8080/api/tasks');
+	xhr.responseType = 'json';
+	xhr.setRequestHeader('content-type','application/json');
+	xhr.setRequestHeader('token','b08494e1db6dc606baa613fbf2a05393');
+
+
+	xhr.send(JSON.stringify(data));
+};

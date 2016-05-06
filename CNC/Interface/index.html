@@ -42,27 +42,28 @@
 					<tbody>
 
 					</tbody>
-					<tfoot>
+					<tfoot id="taskForm">
 						<th>						</th>
-						<th><select name="Type">
+						<th>
+							<select name="Type">
 								<option value="value1"> hash-md5 </option>
   							<option value="value2"> hash-sha256 </option>
 								<option value="value3"> crack-md5 </option>
-								</select>
+							</select>
 						</th>
-						<th>						</th>
-						<th>						</th>
+						<th><input type="text" name="name" value="Here Input"></th>
+						<th><button type="button" name="submitButton" onclick="processTaskForm();">Submit!</button></th>
 					</tfoot>
 				</table>
 			</section>
 		</main>
-	</body>
-	<script>
-		document.addEventListener("DOMContentLoaded", function(event) {
-			initStatus();
-			initTask();
-		});
+</body>
+<script>
 
-	</script>
+		document.addEventListener("DOMContentLoaded", function(event) {
+    		initStatus();
+    		initTask();
+		});
+</script>
 
 </html>
