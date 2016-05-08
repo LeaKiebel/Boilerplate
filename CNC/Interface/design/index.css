@@ -2,9 +2,6 @@ body,html {
 	margin:0;
     background: none linen;
 	font-family:"Lucida Console";
-	
-
-
 }
 
 header {
@@ -22,25 +19,21 @@ aside {
     height: 100%;
     overflow: auto;
     width: 143px;
-    float: left;
-	
+    float: left;	
 }
 menu {
 	position: fixed;
 	float: left;
-
     margin-right: 0px;
 	padding:0px;
     height: inherit;
     left: inherit;
 	list-style:none;
-
 }
 
 menu > li {
 	color: #888888;
 	display: list-item;
-
 }
 menu > li > a {
 	padding:30px 30px 30px 41px;
@@ -50,7 +43,10 @@ menu > li > a {
     font-size: 20px;
 }
 menu > li > a:hover {
-	    background: #FF7777;
+	background: #FF7777;
+}
+menu > li > a:active{
+	background: #FF8888;
 }
 
 main {
@@ -61,8 +57,7 @@ main {
 	right:0px;
 	bottom: 0px;
 	height:auto;
-	overflow:scroll;
-	
+	overflow:scroll;	
 }
 main > section {
     width: 100%;
@@ -78,20 +73,14 @@ table {
     width: absolute;
 	height: absolute;
 	border-collapse: collapse;
-
-
-	
-
 }
 thead{
 	background-color:#99FF99;
-
 }
 
 table tr {
     width: 100%;
     transition: background 0.2s;
-
 }
 table tr:nth-child(2n){
     background: rgb(226, 226, 226);
@@ -101,13 +90,10 @@ table tr:nth-child(2n){
     margin-top: 0px;
 }
 table, td, th {
-    border: 2px solid black;
-	
-	
+    border: 2px solid black;	
 }
 td, th {
-padding:3px;
-
+	padding:3px;
 }
 tr:hover {
     color: #606060;
