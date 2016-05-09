@@ -1,6 +1,8 @@
 body,html {
+	width: 100%;
+	height: 100%;
 	margin:0;
-    background: none linen;
+  background: none linen;
 	font-family:"Lucida Console";
 }
 
@@ -9,32 +11,25 @@ header {
     height: 50px;
     text-align: center;
     font-size: 30px;
-	background-color: #9999FF;
+		background-color: #9999FF;
 }
 aside {
-	background-color: #FF9999;
-    position:fixed;
-    left: 0px;
-    top: 0px;
+		background-color: #FF9999;
+    position: relative;
+		float: left;
+		margin:0;
     height: 100%;
-    overflow: auto;
-    width: 143px;
-    float: left;
+    width: 150px;
 }
 menu {
-	position: fixed;
-	float: left;
-    margin-right: 0px;
+	position:fixed;
+  margin: 25px 0 0 0;
 	padding:0px;
-    height: inherit;
-    left: inherit;
+  height: inherit;
+	width: inherit;
 	list-style:none;
 }
 
-menu > li {
-	color: #888888;
-	display: list-item;
-}
 menu > li > a {
 	padding:30px 30px 30px 41px;
 	display:block;
@@ -46,54 +41,43 @@ menu > li > a:hover {
 	background: #FF7777;
 }
 menu > li > a:active{
-	background: #FF8888;
+	background: #FF88FF;
 }
 
 main {
-	top:74px;
-	position:absolute;
-    width:absolute;
-	left:143px;
-	right:0px;
-	bottom: 0px;
-	height:auto;
-	overflow:scroll;
+	float: right;
+	margin:20px;
+	left:150px;
+	top:0;
+  width: 80%;
+	height: 80%;
 }
 main > section {
     width: 100%;
     height: 100%;
-    padding: 20px;
-    top: 100%;
-    overflow: auto;
-    transition: top .5s;
+		overflow: auto;
 }
+
 table {
-	position:absolute;
-    visibility: hidden;
-    width: absolute;
-	height: absolute;
+
+  visibility: hidden;
 	border-collapse: collapse;
+	width: 80%;
+	height: 100%;
+		border: 2px solid black;
+}
+td, th {
+	padding:3px;
+	border: 2px solid black;
+}
+table tr:nth-child(2n){
+	background: #E2E2E2;
 }
 thead{
 	background-color:#99FF99;
 }
-
-table tr {
-    width: 100%;
-    transition: background 0.2s;
-}
-table tr:nth-child(2n){
-    background: #E2E2E2;
-}
-#status-overview:target,#tasks:target {
+#status-overview:target, #tasks:target {
     visibility: visible;
-    margin-top: 0px;
-}
-table, td, th {
-    border: 2px solid black;
-}
-td, th {
-	padding:3px;
 }
 tr:hover {
     color: #606060;
