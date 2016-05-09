@@ -19,7 +19,7 @@ aside {
     height: 100%;
     overflow: auto;
     width: 143px;
-    float: left;	
+    float: left;
 }
 menu {
 	position: fixed;
@@ -53,11 +53,11 @@ main {
 	top:74px;
 	position:absolute;
     width:absolute;
-	left:143px;	
+	left:143px;
 	right:0px;
 	bottom: 0px;
 	height:auto;
-	overflow:scroll;	
+	overflow:scroll;
 }
 main > section {
     width: 100%;
@@ -83,14 +83,14 @@ table tr {
     transition: background 0.2s;
 }
 table tr:nth-child(2n){
-    background: rgb(226, 226, 226);
+    background: #E2E2E2;
 }
 #status-overview:target,#tasks:target {
     visibility: visible;
     margin-top: 0px;
 }
 table, td, th {
-    border: 2px solid black;	
+    border: 2px solid black;
 }
 td, th {
 	padding:3px;
