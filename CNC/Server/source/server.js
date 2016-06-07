@@ -7,6 +7,7 @@ var bodyparser = require('body-parser');
 
 router.use(cors());// enable cross origin http-reguest
 router.use(bodyparser.json()); // enable body
+router.use(bodyparser.urlencoded({extended:true}));
 
 var ROUTES  = [ 'welcome','bots'];
 

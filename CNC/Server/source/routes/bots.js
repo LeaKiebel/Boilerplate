@@ -7,23 +7,25 @@ var tasks = JSON.parse(fs.readFileSync('/home/crixus/Uni/3.Semester/WAW/Boilerpl
 
 module.exports = function(router) {
 
-  router.get('/Status',(req, res) => {
-
-        res.send(status);
-
-    });
-
-  router.post('/Status',(req, res) => {
-    res.status(200);
-    res.send();
+  router.get('/Status(/:id)?',(req, res) => {
+    (req.params.id ? res.send(status[req.params.id]): res.send(status))
   });
 
-  router.get('/Tasks',(req, res) => {
-    res.send(tasks);
+  router.post('/Status/:id',(req, res) => {
+
+    var ans = req.body.id ? JSON.stringify({message:'OK'}): JSON.stringify({message:'NOT OK'});
+
+    console.log(ans);
   });
 
-  router.post('/Tasks',(req, res) => {
-    res.status(200);
-    res.send();
+  router.get('/Tasks(/:id)?',(req, res) => {
+    (req.params.id ? res.send(tasks[req.params.id]): res.send(tasks))
+
+  });
+
+  router.post('/Tasks/:id',(req, res) => {
+    var ans = req.body.id ? JSON.stringify({message:'OK'}): JSON.stringify({message:'NOT OK'});
+
+    console.log(ans);
   });
 };
