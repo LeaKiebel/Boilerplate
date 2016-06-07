@@ -2,11 +2,13 @@
 var express = require('express');
 var app     = express();
 var router  = express.Router();
-//var cors 		= require('cors');
+var cors 		= require('cors');
+var bodyparser = require('body-parser');
 
-//router.use(cors());// enable cross origin http-reguest
+router.use(cors());// enable cross origin http-reguest
+router.use(bodyparser.json()); // enable body
 
-var ROUTES  = [ 'welcome','tasks'];
+var ROUTES  = [ 'welcome','bots'];
 
 if (ROUTES.length > 0) {
 

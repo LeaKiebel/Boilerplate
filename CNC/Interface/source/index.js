@@ -54,7 +54,6 @@ var _REST = function(options, callback) {
 		xhr.open(method, _SERVER + path);
 		xhr.responseType = 'json';
 		xhr.setRequestHeader('Content-Type', 'application/json');
-
 		// header festlegen
 		if (options.headers instanceof Object) {
 
