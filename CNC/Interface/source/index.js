@@ -12,7 +12,7 @@ var toggle_status = function(id) {
 
 	var label = this.querySelector('span');
 
-
+// ruft request auf
 	_REST({
 		method: 'POST',
 		path:   '/api/Status',
@@ -34,16 +34,18 @@ var toggle_status = function(id) {
 
 };
 
+// hier wird der request ausgeführt und dann der callback ausgeführt
 var _REST = function(options, callback) {
 
 	options = options || {};
 
-
+	// request-line festlegen
 	var method = options.method || 'GET';
 	var path   = options.path   || null;
 	var data   = options.data   || null;
 
 
+	// path
 	if (path !== null) {
 
 		var xhr = new XMLHttpRequest();
@@ -53,7 +55,7 @@ var _REST = function(options, callback) {
 		xhr.responseType = 'json';
 		xhr.setRequestHeader('Content-Type', 'application/json');
 
-
+		// header festlegen
 		if (options.headers instanceof Object) {
 
 			for (var key in settings.headers) {
@@ -61,7 +63,7 @@ var _REST = function(options, callback) {
 			}
 
 		}
-
+		// nach dem ausführen wird die response übergeben
 		xhr.onload = function() {
 			callback(xhr.response);
 		};
@@ -107,6 +109,8 @@ if (menu !== null) {
 
 
 	var items = [].slice.call(menu.querySelectorAll('li'));
+	// alle elemente die aktiviert werden, werden als 'active' markiert
+
 	if (items.length > 0) {
 
 		items.forEach(function(item) {
@@ -257,4 +261,3 @@ if (menu !== null) {
 	});
 
 })(document.querySelector('#tasks'));
-
