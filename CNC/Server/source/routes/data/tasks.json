@@ -22,5 +22,13 @@
 			"input": "test",
 			"output": null
 		}
+	},
+	{
+		"id": 4,
+		"type": "hash-md5",
+		"data": {
+			"input": "test123",
+			"output": null
+		}
 	}
 ]
