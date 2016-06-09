@@ -12,7 +12,7 @@ var toggle_status = function(id) {
 
 	var label = this.querySelector('span');
 
-// ruft request auf
+// POST Status mit id  hier kommen wir ein
 	_REST({
 		method: 'POST',
 		path:   '/api/Status',
@@ -75,6 +75,7 @@ var _REST = function(options, callback) {
 		if (data !== null) {
 			xhr.send(JSON.stringify(data));
 		} else {
+			// sendet ein leeres Object also prüfen wir darauf
 			xhr.send(null);
 		}
 
@@ -85,7 +86,7 @@ var _REST = function(options, callback) {
 
 
 /*
- * DOM SHIT
+ * DOM SHIT <-- Ahh NOW i get it
  */
 
 var menu = document.querySelector('menu');
@@ -141,15 +142,17 @@ if (menu !== null) {
 
 
 
+// status tabelle
 (function(section) {
 
-	var tbody  = section.querySelector('table tbody');
+	var tbody  = section.querySelector('table tbody'); // hier von der tabelle
 	var render = function(response) {
 
 		var code = '';
 
 		if (response instanceof Array) {
 
+			// Zeile für Zeile wird die Tabelle erstellt
 			code += response.map(function(bot) {
 
 				var chunk = '';
@@ -160,6 +163,7 @@ if (menu !== null) {
 				chunk += '<td>#' + bot.task     + '</td>';
 				chunk += '<td>'  + bot.workload + '</td>';
 
+				// hier wird der button mit angegeben mit toggle_status funktion
 				if (bot.workload === 0) {
 					chunk += '<td><button onclick="toggle_status.call(this, ' + bot.id + ');"><span class="icon-start"></span></button></td>';
 				} else {
@@ -182,9 +186,9 @@ if (menu !== null) {
 
 	};
 
-	var button = section.querySelector('div.action-bar button');
+	var button = section.querySelector('div.action-bar button'); // auch von status
 	if (button !== null) {
-
+		// bei click führe GET request aus
 		button.onclick = function() {
 
 			_REST({
@@ -196,31 +200,6 @@ if (menu !== null) {
 
 	}
 
-	var submit = section.querySelector('div.action-form button');
-	if (submit !== null) {
-
-		button.onclick = function() {
-
-			var type  = section.querySelector('div.action-form select');
-			var input = section.querySelector('div.action-form input');
-
-
-			_REST({
-				method: 'POST',
-				path:   '/api/Tasks',
-				data:   {
-					id:   null,
-					type: type.value,
-					data: {
-						input:  input.value,
-						output: null
-					}
-				}
-			});
-
-		};
-
-	}
 
 
 	document.addEventListener('DOMContentLoaded', function() {
@@ -230,7 +209,7 @@ if (menu !== null) {
 })(document.querySelector('#status'));
 
 
-
+// TAsks teil
 (function(section) {
 
 	var tbody  = section.querySelector('table tbody');
@@ -278,8 +257,40 @@ if (menu !== null) {
 
 		};
 
-	}
+	}// end of tasks button
 
+
+	// hier wird tasks eintrag übergeben
+	var submit = section.querySelector('span.icon-okay');
+	if (submit !== null) {
+
+		submit.onclick = function() {
+
+			var type  = section.querySelector('div.action-form select');
+			var input = section.querySelector('div.action-form input');
+
+
+			_REST({
+				method: 'POST',
+				path:   '/api/Tasks',
+				data:   {
+					id:   null,
+					type: type.value,
+					data: {
+						input:  input.value,
+						output: null
+					}
+				}
+			},function(response){
+				//refresh
+				if(response.message === 'OK') {
+						button.click();
+				}
+			});
+
+		};
+
+	}
 
 	document.addEventListener('DOMContentLoaded', function() {
 		button.click();

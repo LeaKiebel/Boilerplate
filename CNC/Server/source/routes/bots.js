@@ -37,8 +37,7 @@ module.exports = function(router) {
     var body = req.body;
     var obj;
 
-    console.log(body);
-    if(body && body.id) {
+    if(body instanceof Object) {
 
     // wenn obj existiert
     obj = status.filter(function (value,index,array) {
@@ -51,17 +50,7 @@ module.exports = function(router) {
         return false;
       }
     });
-
-    /* if(obj.length){
-      obj = {
-        id: req.body.id ,
-        ip: req.ip,
-        task:1,
-        workload: (req.body.status ? 1 : 0)
-      }
-      status.push(JSON.stringify(obj));
-    }*/
-
+    // hier vielleicht noch eins anlegen ???? dunno if it is a requirement
   } else {
     ans = JSON.stringify({message:'NOT OK'});
   }
@@ -77,13 +66,14 @@ module.exports = function(router) {
     var ans = JSON.stringify({message:'NOT OK'});
     var body = req.body;
 
-    if(body && body.type && body.data.input) {
+    if(body instanceof Object) {
       if(body.type == 'hash-md5'|| body.type == 'hash-sha256' || body.type == 'crack-md5'){
 
         ans = JSON.stringify({message:'OK'});
         console.log(tasks);
         tasks.push({
           id: tasks.length,
+          type: body.type,
           data: {
             input: body.data.input,
             output: null
